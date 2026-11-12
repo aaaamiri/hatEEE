@@ -1,1 +1,85 @@
 @import "tailwindcss";
+
+@keyframes fireFlicker {
+  0%, 100% { transform: scaleY(1) scaleX(1); opacity: 1; }
+  25% { transform: scaleY(1.2) scaleX(0.9); opacity: 0.9; }
+  50% { transform: scaleY(0.9) scaleX(1.1); opacity: 1; }
+  75% { transform: scaleY(1.1) scaleX(0.95); opacity: 0.85; }
+}
+
+@keyframes heatWave {
+  0%, 100% { transform: translateY(0) scaleX(1); opacity: 0.6; }
+  50% { transform: translateY(-10px) scaleX(1.1); opacity: 0.3; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(-2px) rotate(-1deg); }
+  20% { transform: translateX(2px) rotate(1deg); }
+  30% { transform: translateX(-2px) rotate(-1deg); }
+  40% { transform: translateX(2px) rotate(1deg); }
+  50% { transform: translateX(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(255, 100, 0, 0.5); }
+  50% { box-shadow: 0 0 30px rgba(255, 100, 0, 0.9), 0 0 60px rgba(255, 50, 0, 0.5); }
+}
+
+@keyframes float-up {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-80px) scale(0.5); opacity: 0; }
+}
+
+@keyframes explode {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.8; }
+  100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes success-bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-fire {
+  animation: fireFlicker 0.3s ease-in-out infinite;
+}
+
+.animate-heat-wave {
+  animation: heatWave 1s ease-in-out infinite;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 1s ease-in-out infinite;
+}
+
+.animate-float-up {
+  animation: float-up 1s ease-out forwards;
+}
+
+.animate-explode {
+  animation: explode 0.5s ease-out forwards;
+}
+
+.animate-success {
+  animation: success-bounce 0.5s ease-in-out;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+body {
+  background: #0f0f0f;
+  overflow: hidden;
+}
